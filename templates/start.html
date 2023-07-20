@@ -1,0 +1,17 @@
+{% extends 'base.html'%}
+
+{% block content %}
+{% if not_submitted%}
+    <form>
+        {% for prompt in prompts %}
+        <p>
+            <label>{{prompt}}</label>
+            <input type="text" name="{{prompt}}">
+        </p>
+        {% endfor %}
+        <button>Submit prompts</button>
+    </form>
+    {%else%}
+    <p>{{story}}</p>
+{%endif%}
+{% endblock%}
